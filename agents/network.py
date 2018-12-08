@@ -16,8 +16,8 @@ def build_net(minimap, screen, info, msize, ssize, num_action, ntype):
 
 
 def build_atari(minimap, screen, info, msize, ssize, num_action):
-  # Extract features
-  mconv1 = layers.conv2d(tf.transpose(minimap, [0, 2, 3, 1]),
+  raise Exception("Atari net not supported at the moment")
+  '''mconv1 = layers.conv2d(tf.transpose(minimap, [0, 2, 3, 1]),
                          num_outputs=16,
                          kernel_size=8,
                          stride=4,
@@ -72,7 +72,7 @@ def build_atari(minimap, screen, info, msize, ssize, num_action):
                                             activation_fn=None,
                                             scope='value'), [-1])
 
-  return spatial_action, non_spatial_action, value
+  return spatial_action, non_spatial_action, value'''
 
 
 
