@@ -1,2 +1,2 @@
 # SC2LE-implementation
-An implementation of the fully convolutional agent for playing minigames in the Starcraft 2 learning environment introduced in https://arxiv.org/abs/1708.04782.
+An implementation of the fully convolutional agent for playing minigames in the Starcraft 2 learning environment introduced in https://arxiv.org/abs/1708.04782. Based on xhujoy's implementation https://github.com/xhujoy/pysc2-agents adapted to work with version 2.0 of pysc2 several changes to made it closer to the network used in the original paper, including using the full state and action space as well as choosing action based on the policy function instead of epsilon greedy exploration.
