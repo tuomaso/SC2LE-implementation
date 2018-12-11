@@ -71,11 +71,11 @@ if not os.path.exists(SNAPSHOT):
 
 def run_thread(agent, map_name, visualize):
   
-  player_list=[sc2_env.Agent(sc2_env.Race[FLAGS.agent_race],"Player1")]
+  player_list=[sc2_env.Agent(sc2_env.Race[FLAGS.agent_race])]
   #TO DO: check that bot works properly
   if FLAGS.difficulty!=None:
     player_list.append(sc2_env.Bot(sc2_env.difficulty[FLAGS.bot_race],
-                                   sc2_env.Race[FLAGS.difficulty],"Bot1"))
+                                   sc2_env.Race[FLAGS.difficulty]))
   #have to feed in rgb_dimensions in agent_interface_format to minimize screen popup
   with sc2_env.SC2Env(
     map_name=map_name,

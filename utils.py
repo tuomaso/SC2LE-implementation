@@ -45,11 +45,7 @@ def preprocess_structured(data,key):
     return data
 
   if key=="single_select": #(1,7)
-    non_scalar=[features.UnitLayer['unit_type'],features.UnitLayer['unit_type']]
-    for i in range(len(data[0])):
-      if i not in non_scalar:
-        data[:,i]=np.log(np.maximum(data[:,i]+1,1))
-    return data.reshape([-1])
+    return get_unit_infos(data,1)
   
   #only show info for at most 30 selected units, actual cap 255
   if key=="multi_select": #(n,7)
@@ -76,7 +72,7 @@ def preprocess_structured(data,key):
 def get_unit_infos(data,max_units):
   '''helper func for observations that are similar to single_select
   max_units=maximum amount of spots reserved for different unit types'''
-  non_scalar=[features.UnitLayer['unit_type'],features.UnitLayer['unit_type']]
+  non_scalar=[features.UnitLayer['unit_type'],features.UnitLayer['player_relative']]
   num_units=np.shape(data)[0]
   if num_units>=max_units:
     data=data[:max_units] 
